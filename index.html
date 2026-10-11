@@ -31,7 +31,7 @@
     <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3">
         <div class="max-w-md mx-auto flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
-                <img src="assets/logo.png" alt="Guide Icon" class="w-12 h-8"><h1 class="font-bold text-sm text-emerald-400 tracking-wide"> Hướng Dẫn Căn Hộ</h1>
+                <img src="assets/logo.png" alt="Guide Icon" class="w-8 h-8"><h1 class="font-bold text-sm text-emerald-400 tracking-wide"> Hướng Dẫn Căn Hộ</h1>
             </div>
             
             <button onclick="toggleFullscreen()" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-700 transition">
@@ -42,7 +42,7 @@
         <!-- Các Tab chuyển đổi -->
         <div class="max-w-md mx-auto flex gap-2 overflow-x-auto no-scrollbar pb-1">
             <button onclick="switchTab('tab-nha')" id="btn-tab-nha" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
-                Nhà Ở & Khóa
+                House Rules
             </button>
             <button onclick="switchTab('tab-giat')" id="btn-tab-giat" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
                 Máy Giặt
@@ -61,13 +61,61 @@
         
         <!-- TAB 1: NHÀ Ở -->
         <div id="tab-nha" class="tab-content space-y-4">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <div class="aspect-[4/3] bg-slate-800 rounded-xl overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Nhà ở" class="w-full h-full object-cover">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg sm:p-5">
+                <div class="mb-5">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">Welcome</p>
+                    <h2 class="mt-1 text-xl font-bold text-white">House Rules</h2>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-400">Please take a moment to review these guidelines and help us keep the apartment safe and comfortable for everyone.</p>
                 </div>
-                <div class="p-3 text-center">
-                    <h3 class="font-semibold text-sm text-slate-200">1. Cách sử dụng Khóa Cửa Thông Minh</h3>
-                    <p class="text-xs text-slate-400 mt-1">Áp vân tay hoặc nhập mã số đã được cấp để mở cửa.</p>
+
+                <div class="space-y-3">
+                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
+                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-500/10 text-base" aria-hidden="true">🚭</span>
+                            Safety &amp; prohibited items
+                        </h3>
+                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>No smoking. A fine will be deducted from the deposit.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>No pets or illegal items. Parties and drugs are forbidden.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please do not cook foods that produce strong odors or smoke, or pose a fire hazard, in the apartment kitchen.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please do not bring strong-smelling foods, such as durian, jackfruit, or fermented fish sauces, into the apartment.</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
+                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/10 text-base" aria-hidden="true">🌙</span>
+                            Noise &amp; visitors
+                        </h3>
+                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please keep noise to a minimum after 10:00 pm. Bass speakers and karaoke equipment are not allowed.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Check in with the number of guests stated in your booking. Please let us know in advance if you expect visitors.</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
+                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10 text-base" aria-hidden="true">🏠</span>
+                            Take care of the apartment
+                        </h3>
+                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please take care of the room, its belongings, and facilities. Only non-tracing adhesive tape may be used for decoration.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Do not remove any items from the property. You may be charged for damaged or missing items.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please use towels only for their intended purpose—not as a mat or mop.</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
+                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-base" aria-hidden="true">✅</span>
+                            Before you leave
+                        </h3>
+                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Turn off the power when you leave and please recycle.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Housekeeping is not provided during your stay. The service is available for an additional charge.</span></li>
+                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>We are not responsible for valuables or personal belongings. Please check that you have everything before leaving.</span></li>
+                        </ul>
+                    </section>
                 </div>
             </div>
         </div>
