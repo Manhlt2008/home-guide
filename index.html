@@ -41,118 +41,76 @@
 
         <!-- Navigation tabs -->
         <div class="max-w-md mx-auto flex gap-2 overflow-x-auto no-scrollbar pb-1">
-            <button onclick="switchTab('tab-nha')" id="btn-tab-nha" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+            <button onclick="switchTab('tab-one')" id="btn-tab-one" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+                Welcome
+            </button>
+            <button onclick="switchTab('tab-two')" id="btn-tab-two" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+                Check-in & Access
+            </button>
+            <button onclick="switchTab('tab-three')" id="btn-tab-three" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
                 House Rules
             </button>
-            <button onclick="switchTab('tab-giat')" id="btn-tab-giat" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
-                House Rules Images
+            <button onclick="switchTab('tab-four')" id="btn-tab-four" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+                My Room
             </button>
-            <button onclick="switchTab('tab-bep')" id="btn-tab-bep" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
-                Kitchen & Microwave
+            <button onclick="switchTab('tab-five')" id="btn-tab-five" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+                Safety and Emergency
             </button>
-            <button onclick="switchTab('tab-wifi')" id="btn-tab-wifi" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
-                Wi-Fi
+            <button onclick="switchTab('tab-six')" id="btn-tab-six" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+                Check-out
+            </button>
+            <button onclick="switchTab('tab-seven')" id="btn-tab-seven" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+                Explore Ha Noi
             </button>
         </div>
     </header>
 
     <!-- Tab content -->
     <main class="flex-1 min-h-0 max-w-md w-full mx-auto p-4 flex flex-col">
-        
-        <!-- TAB 1: HOUSE RULES -->
-        <div id="tab-nha" class="tab-content my-auto max-w-md w-full mx-auto p-4 space-y-4">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg sm:p-5">
-                <div class="mb-5">
-                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">Welcome</p>
-                    <h2 class="mt-1 text-xl font-bold text-white">House Rules</h2>
-                    <p class="mt-2 text-sm leading-relaxed text-slate-400">Please take a moment to review these guidelines and help us keep the apartment safe and comfortable for everyone.</p>
-                </div>
-
-                <div class="space-y-3">
-                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
-                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-500/10 text-base" aria-hidden="true">🚭</span>
-                            Safety &amp; prohibited items
-                        </h3>
-                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>No smoking. A fine will be deducted from the deposit.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>No pets or illegal items. Parties and drugs are forbidden.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please do not cook foods that produce strong odors or smoke, or pose a fire hazard, in the apartment kitchen.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please do not bring strong-smelling foods, such as durian, jackfruit, or fermented fish sauces, into the apartment.</span></li>
-                        </ul>
-                    </section>
-
-                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
-                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/10 text-base" aria-hidden="true">🌙</span>
-                            Noise &amp; visitors
-                        </h3>
-                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please keep noise to a minimum after 10:00 pm. Bass speakers and karaoke equipment are not allowed.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Check in with the number of guests stated in your booking. Please let us know in advance if you expect visitors.</span></li>
-                        </ul>
-                    </section>
-
-                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
-                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10 text-base" aria-hidden="true">🏠</span>
-                            Take care of the apartment
-                        </h3>
-                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please take care of the room, its belongings, and facilities. Only non-tracing adhesive tape may be used for decoration.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Do not remove any items from the property. You may be charged for damaged or missing items.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Please use towels only for their intended purpose—not as a mat or mop.</span></li>
-                        </ul>
-                    </section>
-
-                    <section class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-                        <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
-                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-base" aria-hidden="true">✅</span>
-                            Before you leave
-                        </h3>
-                        <ul class="space-y-2.5 text-sm leading-relaxed text-slate-300">
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Turn off the power when you leave and please recycle.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>Housekeeping is not provided during your stay. The service is available for an additional charge.</span></li>
-                            <li class="flex gap-2.5"><span class="text-emerald-400" aria-hidden="true">•</span><span>We are not responsible for valuables or personal belongings. Please check that you have everything before leaving.</span></li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB 2: LAUNDRY -->
-        <div id="tab-giat" class="tab-content hidden flex-1 min-h-0">
+        <!-- TAB 1: Welcome -->
+        <div id="tab-one" class="tab-content flex-1 min-h-0">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/Rules.png" alt="House rules" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/Welcome.jpg" alt="Welcome" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
 
-        <!-- TAB 3: KITCHEN -->
-        <div id="tab-bep" class="tab-content hidden my-auto max-w-md w-full mx-auto p-4 space-y-4">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <div class="aspect-[4/3] bg-slate-800 rounded-xl overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Kitchen" class="w-full h-full object-cover">
-                </div>
-                <div class="p-3 text-center">
-                    <h3 class="font-semibold text-sm text-slate-200">1. Using the induction cooktop safely</h3>
-                    <p class="text-xs text-slate-400 mt-1">Always turn on the range hood when frying or stir-frying.</p>
-                </div>
+        <!-- TAB 2: Check-in & Access -->
+        <div id="tab-two" class="tab-content flex-1 min-h-0">
+            <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
+                <img src="assets/CheckIn.jpg" alt="Check in" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
 
-        <!-- TAB 4: WI-FI -->
-        <div id="tab-wifi" class="tab-content hidden my-auto max-w-md w-full mx-auto p-4 space-y-4">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <div class="aspect-[4/3] bg-slate-800 rounded-xl overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" alt="Wi-Fi" class="w-full h-full object-cover">
-                </div>
-                <div class="p-3 text-center">
-                    <h3 class="font-semibold text-sm text-slate-200">1. Free Wi-Fi</h3>
-                    <p class="text-xs text-slate-400 mt-1">Network: 48YenBai | Password: 48yenbai1</p>
-                </div>
+        <!-- TAB 3: House Rules -->
+        <div id="tab-three" class="tab-content flex-1 min-h-0">
+            <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
+                <img src="assets/HouseRules.jpg" alt="House Rules" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
-
+        <!-- TAB 4: My Room -->
+        <div id="tab-four" class="tab-content flex-1 min-h-0">
+            <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
+                <img src="assets/MyRoom.jpg" alt="My Room" class="block w-full h-full rounded-xl object-contain">
+            </div>
+        </div>
+        <!-- TAB 5: Safety and Emergency -->
+        <div id="tab-five" class="tab-content flex-1 min-h-0">
+            <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
+                <img src="assets/SafetyEmergency.jpg" alt="Safety and Emergency" class="block w-full h-full rounded-xl object-contain">
+            </div>
+        </div>
+        <!-- TAB 6: Check-out -->
+        <div id="tab-six" class="tab-content flex-1 min-h-0">
+            <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
+                <img src="assets/CheckOut.jpg" alt="Check out" class="block w-full h-full rounded-xl object-contain">
+            </div>
+        </div>
+        <!-- TAB 7: Explore -->
+        <div id="tab-seven" class="tab-content flex-1 min-h-0">
+            <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
+                <img src="assets/Welcome.jpg" alt="Explore" class="block w-full h-full rounded-xl object-contain">
+            </div>
+        </div>
     </main>
 
     <footer class="py-3 text-center text-[11px] text-slate-600">
