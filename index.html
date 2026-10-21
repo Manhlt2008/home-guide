@@ -9,6 +9,9 @@
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @media (hover: hover) {
+            .tab-btn:not(.tab-active):hover { background-color: #334155; }
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
@@ -41,25 +44,25 @@
 
         <!-- Navigation tabs -->
         <div class="max-w-md mx-auto flex gap-2 overflow-x-auto no-scrollbar pb-1">
-            <button onclick="switchTab('tab-one')" id="btn-tab-one" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+            <button onclick="switchTab('tab-one')" id="btn-tab-one" class="tab-btn tab-active px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
                 Welcome
             </button>
-            <button onclick="switchTab('tab-two')" id="btn-tab-two" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+            <button onclick="switchTab('tab-two')" id="btn-tab-two" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400">
                 Check-in & Access
             </button>
-            <button onclick="switchTab('tab-three')" id="btn-tab-three" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+            <button onclick="switchTab('tab-three')" id="btn-tab-three" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400">
                 House Rules
             </button>
-            <button onclick="switchTab('tab-four')" id="btn-tab-four" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+            <button onclick="switchTab('tab-four')" id="btn-tab-four" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400">
                 My Room
             </button>
-            <button onclick="switchTab('tab-five')" id="btn-tab-five" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+            <button onclick="switchTab('tab-five')" id="btn-tab-five" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400">
                 Safety and Emergency
             </button>
-            <button onclick="switchTab('tab-six')" id="btn-tab-six" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+            <button onclick="switchTab('tab-six')" id="btn-tab-six" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400">
                 Check-out
             </button>
-            <button onclick="switchTab('tab-seven')" id="btn-tab-seven" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400 hover:bg-slate-700">
+            <button onclick="switchTab('tab-seven')" id="btn-tab-seven" class="tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-800 text-slate-400">
                 Explore Ha Noi
             </button>
         </div>
@@ -75,38 +78,38 @@
         </div>
 
         <!-- TAB 2: Check-in & Access -->
-        <div id="tab-two" class="tab-content flex-1 min-h-0">
+        <div id="tab-two" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
                 <img src="assets/CheckIn.jpg" alt="Check in" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
 
         <!-- TAB 3: House Rules -->
-        <div id="tab-three" class="tab-content flex-1 min-h-0">
+        <div id="tab-three" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
                 <img src="assets/HouseRules.jpg" alt="House Rules" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 4: My Room -->
-        <div id="tab-four" class="tab-content flex-1 min-h-0">
+        <div id="tab-four" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
                 <img src="assets/MyRoom.jpg" alt="My Room" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 5: Safety and Emergency -->
-        <div id="tab-five" class="tab-content flex-1 min-h-0">
+        <div id="tab-five" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
                 <img src="assets/SafetyEmergency.jpg" alt="Safety and Emergency" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 6: Check-out -->
-        <div id="tab-six" class="tab-content flex-1 min-h-0">
+        <div id="tab-six" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
                 <img src="assets/CheckOut.jpg" alt="Check out" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 7: Explore -->
-        <div id="tab-seven" class="tab-content flex-1 min-h-0">
+        <div id="tab-seven" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
                 <img src="assets/Welcome.jpg" alt="Explore" class="block w-full h-full rounded-xl object-contain">
             </div>
@@ -124,10 +127,12 @@
             document.getElementById(tabId).classList.remove('hidden');
 
             document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
                 btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
                 btn.classList.add('bg-slate-800', 'text-slate-400');
             });
             const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.add('tab-active');
             activeBtn.classList.remove('bg-slate-800', 'text-slate-400');
             activeBtn.classList.add('bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
         }
