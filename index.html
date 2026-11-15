@@ -10,34 +10,22 @@
         @media (hover: hover) {
             .tab-btn:not(.tab-active):hover { background-color: #334155; }
         }
+        [hidden] { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
 
-    <!-- Tap once to enter fullscreen mode -->
-    <!-- <div id="welcome-overlay" class="fixed inset-0 bg-slate-950/98 z-50 flex flex-col items-center justify-center p-6 text-center">
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl max-w-sm shadow-2xl">
-            <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                📱
-            </div>
-            <h2 class="text-xl font-bold mb-2">Apartment Guide</h2>
-            <p class="text-slate-400 text-sm mb-6">Tap the button below to open the guide in fullscreen.</p>
-            <button onclick="enterFullscreen()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-3 px-6 rounded-xl transition-all shadow-lg shadow-emerald-600/30">
-                Start Viewing
-            </button>
-        </div>
-    </div> -->
-
     <!-- Header and tab navigation -->
     <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3">
-        <div class="max-w-md mx-auto flex items-center justify-between mb-2">
+        <div class="max-w-md mx-auto flex items-center justify-between gap-3 mb-2">
             <div class="flex items-center gap-2">
-                <img src="assets/logo.png" alt="Guide icon" class="w-8 h-8"><h1 class="font-bold text-sm text-emerald-400 tracking-wide"> Apartment Guide</h1>
+                <img src="assets/logo.png" alt="Guide icon" class="w-8 h-8"><h1 id="guide-title" class="font-bold text-sm text-emerald-400 tracking-wide"> Apartment Guide</h1>
             </div>
             
-            <!-- <button onclick="toggleFullscreen()" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-700 transition">
-                ⛶ Fullscreen
-            </button> -->
+            <div class="flex shrink-0 items-center rounded-lg bg-slate-800" role="group" aria-label="Language / Ngôn ngữ">
+                <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true" onclick="setLanguage('en')" class="language-btn rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors bg-emerald-600 text-white">EN</button>
+                <button type="button" data-language="vi" lang="vi" aria-label="Tiếng Việt" aria-pressed="false" onclick="setLanguage('vi')" class="language-btn rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors text-slate-400">VN</button>
+            </div>
         </div>
 
         <!-- Navigation tabs -->
@@ -71,50 +59,50 @@
         <!-- TAB 1: Welcome -->
         <div id="tab-one" class="tab-content flex-1 min-h-0">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/Welcome.jpg" alt="Welcome" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/Welcome.jpg" data-src-en="assets/Welcome.jpg" data-src-vi="assets/Welcome.jpg" alt="Welcome" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
 
         <!-- TAB 2: Check-in & Access -->
         <div id="tab-two" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/CheckIn.jpg" alt="Check in" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/CheckIn.jpg" data-src-en="assets/CheckIn.jpg" data-src-vi="assets/Welcome.jpg" alt="Check in" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
 
         <!-- TAB 3: House Rules -->
         <div id="tab-three" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/HouseRules.jpg" alt="House Rules" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/HouseRules.jpg" data-src-en="assets/HouseRules.jpg" data-src-vi="assets/Welcome.jpg" alt="House Rules" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 4: My Room -->
         <div id="tab-four" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/MyRoom.jpg" alt="My Room" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/MyRoom.jpg" data-src-en="assets/MyRoom.jpg" data-src-vi="assets/Welcome.jpg" alt="My Room" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 5: Safety and Emergency -->
         <div id="tab-five" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/SafetyEmergency.jpg" alt="Safety and Emergency" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/SafetyEmergency.jpg" data-src-en="assets/SafetyEmergency.jpg" data-src-vi="assets/Welcome.jpg" alt="Safety and Emergency" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 6: Check-out -->
         <div id="tab-six" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/CheckOut.jpg" alt="Check out" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/CheckOut.jpg" data-src-en="assets/CheckOut.jpg" data-src-vi="assets/Welcome.jpg" alt="Check out" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
         <!-- TAB 7: Explore -->
         <div id="tab-seven" class="tab-content flex-1 min-h-0 hidden">
             <div class="h-full min-h-0 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 shadow-lg">
-                <img src="assets/Welcome.jpg" alt="Explore" class="block w-full h-full rounded-xl object-contain">
+                <img src="assets/Welcome.jpg" data-src-en="assets/Welcome.jpg" data-src-vi="assets/Welcome.jpg" alt="Explore" class="block w-full h-full rounded-xl object-contain">
             </div>
         </div>
     </main>
 
-    <footer class="py-3 text-center text-[11px] text-slate-600">
+    <footer id="guide-footer" class="py-3 text-center text-[11px] text-slate-600">
         Rest easy. Roam Ha Noi.
     </footer>
 
@@ -135,36 +123,50 @@
             activeBtn.classList.add('bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
         }
 
-        function enterFullscreen() {
-            var elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen().catch(() => {});
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
+        const translations = {
+            en: {
+                title: 'Apartment Guide',
+                footer: 'Rest easy. Roam Ha Noi.',
+                tabs: ['Welcome', 'Check-in & Access', 'House Rules', 'My Room', 'Safety and Emergency', 'Check-out', 'Explore Ha Noi']
+            },
+            vi: {
+                title: 'Hướng dẫn lưu trú',
+                footer: 'An tâm nghỉ ngơi. Khám phá Hà Nội.',
+                tabs: ['Chào mừng', 'Nhận phòng & Mở cửa', 'Nội quy lưu trú', 'Thông tin phòng', 'An toàn & Khẩn cấp', 'Trả phòng', 'Khám phá Hà Nội']
             }
-            
-            const overlay = document.getElementById('welcome-overlay');
-            overlay.style.opacity = '0';
-            setTimeout(() => { overlay.style.display = 'none'; }, 300);
-            window.scrollTo(0, 1);
+        };
+
+        const guideImages = Array.from(document.querySelectorAll('.tab-content img'));
+
+        function setLanguage(language) {
+            if (!Object.prototype.hasOwnProperty.call(translations, language)) return;
+            const translation = translations[language];
+            document.documentElement.lang = language;
+            document.title = translation.title;
+            document.getElementById('guide-title').textContent = translation.title;
+            document.getElementById('guide-footer').textContent = translation.footer;
+            document.querySelectorAll('.tab-btn').forEach((button, index) => {
+                button.textContent = translation.tabs[index];
+                guideImages[index].alt = translation.tabs[index];
+            });
+            guideImages.forEach(image => {
+                // Fall back to the English image if the selected image cannot load.
+                image.onerror = () => {
+                    image.onerror = null;
+                    image.src = image.dataset.srcEn;
+                };
+                image.src = language === 'vi' ? image.dataset.srcVi : image.dataset.srcEn;
+            });
+            document.querySelectorAll('.language-btn').forEach(button => {
+                const selected = button.dataset.language === language;
+                button.setAttribute('aria-pressed', String(selected));
+                button.classList.toggle('bg-emerald-600', selected);
+                button.classList.toggle('text-white', selected);
+                button.classList.toggle('text-slate-400', !selected);
+            });
         }
 
-        function toggleFullscreen() {
-            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-                var elem = document.documentElement;
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen().catch(() => {});
-                } else if (elem.webkitRequestFullscreen) {
-                    elem.webkitRequestFullscreen();
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                }
-            }
-        }
+        setLanguage('en');
     </script>
 </body>
 </html>
