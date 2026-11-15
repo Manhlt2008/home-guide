@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code · Home Guide</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      padding: 24px;
+      display: grid;
+      place-items: center;
+      background: #f1f5f9;
+      color: #0f172a;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .qr-card {
+      width: 100%;
+      max-width: 396px;
+      padding: 28px 24px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      box-shadow: 0 16px 48px rgb(15 23 42 / 8%);
+    }
+
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    p { margin: 0 0 24px; color: #64748b; line-height: 1.5; }
+
+    .qr-frame {
+      position: relative;
+      width: 100%;
+      max-width: 348px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+    }
+
+    #qrcode { width: 100%; aspect-ratio: 1; }
+    #qrcode img, #qrcode canvas { width: 100%; height: auto; }
+
+    .qr-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18%;
+      aspect-ratio: 1;
+      padding: 6px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 12px;
+    }
+
+    .site-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #475569;
+      font-size: 13px;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .site-link:hover { text-decoration: underline; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <main class="qr-card">
+    <h1>Home Guide</h1>
+    <p>Quét mã QR để truy cập hướng dẫn</p>
+    <div class="qr-frame" aria-label="Mã QR truy cập Home Guide">
+      <div id="qrcode"></div>
+      <img class="qr-logo" src="assets/logo.png" alt="Logo Home Guide">
+    </div>
+  </main>
+  <script>
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://manhlt2008.github.io/home-guide/",
+      width: 300,
+      height: 300,
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>
